@@ -6,32 +6,32 @@
 \usetikzlibrary{shapes,arrows,shadows,decorations,decorations.text}
 
 \begin{document}
-\tikzstyle{line} = [draw, ultra thick, -latex']
+\tikzstyle{line} = [draw]
 \begin{tikzpicture}
   \path
   [decorate,
   decoration={text along path,
-    text={\verb|start:; popl %eax popl; %eax movl $0, %esi; movl $10, %edx; jmp read_arg|}}]
+    text={start:; popl \%eax popl; \%eax movl \$0, \%esi; movl \$10, \%edx; jmp read_arg}}]
   (0,2) cos (3,0.5);
   \path
   [decorate,
   decoration={text along path,
-    text={\verb|read_arg:; popl %eax; cmpl $0, %eax; je sort; movl $0, %edi; movl $0, %ecx|}}]
+    text={read_arg:; popl \%eax; cmpl \$0, \%eax; je sort; movl \$0, \%edi; movl \$0, \%ecx}}]
   (4.5,-0.5) sin (8,-2) cos (12,0) sin (16,2) cos (19,0.5);
   \path
   [decorate,
   decoration={text along path,
-    text={\verb|store_arg:; movl %ecx, lst(,%esi,4); incl %esi|}}]
+    text={store_arg:; movl \%ecx, lst(,\%esi,4); incl \%esi}}]
   (0,-2) cos (4,0) sin (8,2) cos (11,0.5);
   \path
   [decorate,
   decoration={text along path,
-    text={\verb|cmpl $0, %ebx; je store_arg; imul %edx, %ecx; subl $48, %ebx;|}}]
+    text={cmpl \$0, \%ebx; je store_arg; imul \%edx, \%ecx; subl \$48, \%ebx;}}]
   (12.5,-0.5) sin (16,-2) cos (20,0) sin (24,2);
   \path
   [decorate,
   decoration={text along path,
-    text={\verb|addl %ebx, %ecx; incl %edi; jmp read_ch|}}]
+    text={addl \%ebx, \%ecx; incl \%edi; jmp read_ch}}]
   (20.5,-0.5) sin (24,-2);
 \end{tikzpicture}
 \end{document}
