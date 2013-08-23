@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[usenames]{color}
+\usepackage{amsmath}
+\usepackage[mathscr]{eucal}
+\pagestyle{empty}             % do not remove
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\tolerance=1000
+% The settings below are copied from fullpage.sty
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-3cm}
+\setlength{\oddsidemargin}{1.5cm}
+\addtolength{\oddsidemargin}{-2.54cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-3cm}
+\setlength{\topmargin}{1.5cm}
+\addtolength{\topmargin}{-2.54cm}
+\usepackage[active, tightpage]{preview}
+\setlength{\PreviewBorder}{1.75em}
+\begin{document}
+\begin{preview}
+\usetikzlibrary{shapes,arrows,shadows,decorations,decorations.text}
+\tikzstyle{line} = [draw, ultra thick, -latex']
+{\huge
+  \begin{tikzpicture}[scale=0.5]
+    \path
+    [decorate,
+    decoration={text along path,
+      text={main(int argc, char *argv[]) int a; int b; if(a!=b) a++1;}}]
+      (0,2) cos (3,0.5);
+      \path
+      [decorate,
+      decoration={text along path,
+        text={argc, char *argv[]) int a; int b; if(a!=b) a++1;}}]
+      (4.5,-0.5) sin (8,-2) cos (12,0) sin (16,2) cos (19,0.5);
+    \path
+    [decorate,
+    decoration={text along path,
+      text={main(int argc, char *argv[]) int a; int b; if(a!=b) a++1;}}]
+      (0,-2) cos (4,0) sin (8,2) cos (11,0.5);
+    \path
+    [decorate,
+    decoration={text along path,
+      text={[]) int a; int b; if(a!=b) a++1;}}]
+    (12.5,-0.5) sin (16,-2) cos (20,0) sin (24,2);
+    \path
+    [decorate,
+    decoration={text along path,
+      text={if(a!=b) a++1;}}]
+    (20.5,-0.5) sin (24,-2);
+\end{tikzpicture}
+}
+\end{preview}
+\end{document}

@@ -1,0 +1,54 @@
+Notes                                                      -*- org -*-
+
+#+begin_src latex :file stuff/epr-logo.pdf :border 1.75em :packages '(("" "tikz")) :exports code
+  \usetikzlibrary{shapes,arrows,shadows,decorations,decorations.text}
+  \tikzstyle{line} = [draw, ultra thick, -latex']
+  {\huge
+    \begin{tikzpicture}[scale=0.5]
+      \path
+      [decorate,
+      decoration={text along path,
+        text={main(int argc, char *argv[]) int a; int b; if(a!=b) a++1;}}]
+        (0,2) cos (3,0.5);
+        \path
+        [decorate,
+        decoration={text along path,
+          text={argc, char *argv[]) int a; int b; if(a!=b) a++1;}}]
+        (4.5,-0.5) sin (8,-2) cos (12,0) sin (16,2) cos (19,0.5);
+      \path
+      [decorate,
+      decoration={text along path,
+        text={main(int argc, char *argv[]) int a; int b; if(a!=b) a++1;}}]
+        (0,-2) cos (4,0) sin (8,2) cos (11,0.5);
+      \path
+      [decorate,
+      decoration={text along path,
+        text={[]) int a; int b; if(a!=b) a++1;}}]
+      (12.5,-0.5) sin (16,-2) cos (20,0) sin (24,2);
+      \path
+      [decorate,
+      decoration={text along path,
+        text={if(a!=b) a++1;}}]
+      (20.5,-0.5) sin (24,-2);
+  \end{tikzpicture}
+  }
+#+end_src
+
+was able to make this transparent by...
+1) compiling the latex by hand
+2) converting it to a postscript file
+3) using the =convert= command to convert the =.ps= to =.png=
+4) and then cropping the resulting image with the gimp
+#+begin_src sh
+  latex /tmp/latex-6235Apd.tex
+  dvips -o logo.ps latex-6235Apd.dvi
+  convert -density 300 logo.ps logo.png
+  convert -fuzz 50% -trim logo.png logo.trim.png
+#+end_src
+
+#+RESULTS:
+
+resulted in
+- epr.logo.base.png
+- epr.logo.black.png
+- epr.logo.white.png
